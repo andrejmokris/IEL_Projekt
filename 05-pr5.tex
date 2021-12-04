@@ -1,3 +1,92 @@
 \section{Příklad 5}
 % Jako parametr zadejte skupinu (A-H)
-\patyZadani{F}
+\patyZadani{D}
+
+\begin{center}
+    \textbf{Krok 1} - Opíšeme obvod rovnicou pomocou Ohmovho zákona a II. Kirchhoffového zákona
+\end{center}
+
+\begin{gather*}
+    U_R + U_R - U = 0 V \\
+    R \times i + U_C - U = 0 V \\
+    I = \frac {U_{R}} {R} = \frac {U - U_{C}} {R} \\
+\end{gather*}
+
+%u'_c
+
+\begin{center}
+    \textbf{Krok 2} - Zostavíme rovnicu ${u'_{c}}$
+\end{center}
+
+\begin{gather*}
+    u'_{c} = \frac {i} {c} = \frac {\frac {U - U_{C}} {R}} {c} = \frac {U - U_{C}} {R \times C} = \frac  {35 - U_{C}} {5 \times 25} \\
+\end{gather*}
+ 
+
+\begin{center}
+    \textbf{Krok 3} - Zostavíme diferenciálnu rovnicu
+\end{center}
+
+\begin{gather*}
+    u'_{c} + U_{C} \times \frac {1} {125} = \frac {7} {25} \\
+\end{gather*}
+
+\newpage 
+
+\begin{center}
+    \textbf{Krok 4} - Riešenie charakteristickej rovnice pre ${\lambda}$
+\end{center}
+
+\begin{gather*}
+    \lambda + \frac {1} {R \times C} = 0 \\\
+    \lambda + \frac {1} {125} = 0 \\\
+    \lambda = - \frac {1} {125} \
+\end{gather*}
+
+\begin{center}
+    \textbf{Krok 5} - Očakávané riešenie
+\end{center}
+
+\begin{gather*}
+    u_{c}(t) = k(t) \times e^{\lambda \times t} \\
+    u_{c}(t) = k(t) \times e^{-\frac {t}{125}}
+\end{gather*}
+
+\begin{center}
+    \textbf{Krok 6} - Dosadíme do všeobecnej rovnice a zderivujeme
+\end{center}
+
+\begin{gather*}
+    u'_{c}(t) = k'(t) \times e^{-\frac {t}{125}} + k(t)(-\frac {1} {125})e^{-\frac {t}{125}}
+\end{gather*}
+
+\begin{center}
+    \textbf{Krok 7} - Dosadíme do diferenciálnej rovnice z kroku 3
+\end{center}
+
+\begin{gather*}
+    u'_{c} + U_{C} \times \frac {1} {125} = \frac {7} {25} \\
+   k'(t) \times e^{-\frac {t}{125}} + k(t)(-\frac {1} {125})e^{-\frac {t}{125}} + U_{C} \times \frac {1} {125} = \frac {7} {25} \\
+    k'(t) \times e^{\frac {t}{125}} = 0 \\
+\end{gather*}
+
+\begin{center}
+    \textbf{Krok 8} - Zbavíme sa derivacie pomocou intergrácie
+\end{center}
+
+\begin{gather*}
+    k'(t) = \frac {7} {25} \times e^{\frac {1}{125}} \\
+    \int k'(t) = \int \frac {7} {25} e^{\frac {1}{125}} \\
+    k(t) = 35e^{\frac{t}{125}} + K
+\end{gather*}
+
+\begin{center}
+    \textbf{Krok 9} - Dosadíme počiatočnú podmienku
+\end{center}
+
+\begin{gather*}
+   u_{cp} = 35e^{\frac{t}{125}} + K \\
+   15 = 35 + K \\
+    K = - 20
+\end{gather*}
+
