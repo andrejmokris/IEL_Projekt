@@ -75,18 +75,37 @@
 \end{center}
 
 \begin{gather*}
-    k'(t) = \frac {7} {25} \times e^{\frac {1}{125}} \\
-    \int k'(t) = \int \frac {7} {25} e^{\frac {1}{125}} \\
+    k'(t) = \frac {7} {25} \times e^{\frac {t}{125}} \\
+    \int k'(t) = \int \frac {7} {25} e^{\frac {t}{125}} \\
     k(t) = 35e^{\frac{t}{125}} + K
 \end{gather*}
 
+\newpage
+
 \begin{center}
-    \textbf{Krok 9} - Dosadíme počiatočnú podmienku
+    \textbf{Krok 9} - Dosadime do očakávaného riešenia
 \end{center}
 
 \begin{gather*}
-   u_{cp} = 35e^{\frac{t}{125}} + K \\
+   u_{c}(t) = k(t) \times e^{-\frac {t}{125}} \\ 
+   u_{c}(t) = (35e^{\frac{t}{125}} + K) \times e^{-\frac {t}{125}} \\ 
+    u_{c}(t) = 35 + Ke^{-\frac{1}{125}}
+\end{gather*}
+
+\begin{center}
+    \textbf{Krok 10} - Dosadíme počiatočnú podmienku
+\end{center}
+
+\begin{gather*}
+   u_{c} = 35e^{\frac{t}{125}} + K \\
    15 = 35 + K \\
     K = - 20
+\end{gather*}
+
+
+Výsledok:
+
+\begin{gather*}
+	u_{c}(t) = 35-20e^{-\frac{1}{125}}
 \end{gather*}
 
