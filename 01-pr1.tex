@@ -4,7 +4,6 @@
 
 \large{\textbf{Výpočet R$_E$$_K$$_V$ (Metóda postupného zjednodušovania):}}
 
-%%% Krok 1 - Zjednodušnie paralelných rezistorov
 \begin{center}
 
 \textbf{Krok 1} - Zjednodušenie $R_4$ a $R_5$ podľa vzorca pre paralelne zapojené rezistory.
@@ -17,65 +16,56 @@ R_{45} = \frac{R_4 \times R_5}{R_4 + R_5} = \frac{440 \times 450}{440 + 450} = 2
 
 \newpage
 
-%%% Krok 2 - Transfigurácia
 \begin{center}
 \textbf{Krok 2} - Transfigurácia - Trojuholník $\Rightarrow$ Hviezda
 \includegraphics[scale=0.6,keepaspectratio]{fig/c2.png} \\
 \end{center}
 
 \begin{gather*}
-% R_A
 R_A = \frac{R_1 \times R_2}{R_1 + R_2 + R_3} =
 \frac{380 \times 420}{380 + 420 + 330}=
 141.2389 \Omega \\\\
-% R_B
 R_B = \frac{R_1 \times R_3}{R_1 + R_2 + R_3} =
 \frac{380 \times 330}{380 + 420 + 330} =
 110,9735 \Omega \\\\
-% R_C
 R_C = \frac{R_2 \times R_3}{R_1 + R_2 + R_3} =
 \frac{420 \times 330}{380 + 420 + 330} =
 122,6549 \Omega \\\
 \end{gather*}
 
-%%% Krok 3 - Zjednodušenie sériových rezistorov
 \begin{center}
-\textbf{Krok 3} - Zjednodušenie sériových rezistorov
+\textbf{Krok 3} - Zjednodušenie sériových rezistorov $R_B$, $R_{45}$ a $R_7$
 \includegraphics[scale=0.5,keepaspectratio]{fig/c3.png} \\
 ($R_B, R_45, R_7, \Rightarrow R_{B457}$ | $R_C, R_6 \Rightarrow R_{C6}$)
 \end{center}
 
 \begin{gather*}
-% R_B45
 R_{B457} = R_B + R_45 + R_7 =
 110,9735 + 222.4719 + 410 =
 743,4454 \Omega
 \\\\
-% R_C6
 R_{C6} = R_C + R_6 =
 122,6549 + 650 =
 772.6549 \Omega
 \\\
 \end{gather*}
+ 
+\newpage
 
-%%% Krok 4 - Zjednodušenie paralelných rezistorov
 \begin{center}
-\textbf{Krok 4} - Zjednodušenie paralelných rezistorov \\
+\textbf{Krok 4} - Zjednodušenie paralelných rezistorov $R_{B457}$ a $R_{C6}$ \\
 \includegraphics[scale=0.5,keepaspectratio]{fig/c4.png} \\
 ($R_{B45}, R_{C6} \Rightarrow R_{B45C6}$)
 \end{center}
 
 \begin{gather*}
-    % R_BC4567
     R_{B457C6} = \frac{R_{B457} \times R_{C6}}{R_{B457} + R_{C6}} =
     \frac{743,4454 \times 772.6549}{743,4454 +772.6549} =
     378,8844 \Omega \\
 \end{gather*}
 
-
-%%% Krok 5 - Zjednodušenie seriových zdrojov
 \begin{center}
-\textbf{Krok 5} - Zjednodušenie sériových zdrojov
+\textbf{Krok 5} - Zjednodušenie sériových zdrojov $U_1$ a $U_2$
 \includegraphics[scale=0.7,keepaspectratio]{fig/c5.png} \\
 ($U_{1},U_{2} \Rightarrow U_{12}$)
 \end{center}
@@ -84,59 +74,50 @@ R_{C6} = R_C + R_6 =
    U_{12} = U_{1} + U_{2} = 130 + 60 = 190 V \\
 \end{gather*}
 
-
-%%% Krok 6 - Výpočet celkoveho odporu
 \begin{center}
-\textbf{Krok 6} - Výpočet R$_E$$_K$$_V$
+\textbf{Krok 6} - Výpočet R$_E$$_K$$_V$ - zjednodušenie sériových rezistorov $R_{B457C6}$, $R_A$ a $R_8$
 \\
 \includegraphics[scale=0.8,keepaspectratio]{fig/c6.png} \\
 ($R_{A}, R_{B457C6}, R_{8} \Rightarrow R_{AB457C68} \Rightarrow R_{EKV}$)
 \end{center}
 
 \begin{gather*}
-    % R_EKV
     R_{EKV} = R_{A} + R_{B457C6} + R_{8} = 141,2389 + 378.8844 + 275 = 795,1233 \Omega
 \end{gather*}
 
 \newpage
 
-%%% Krok 6 - Výpočet prúdu a zadaných veličín
 \begin{center}
 \textbf{Krok 7} - Výpočet prúdu
 \end{center}
 
 \begin{gather*}
-    % I
    I = \frac {U_{12}} {R_{EKV}} = \frac {190} {795,1233} = 0.23895 A \\
 \end{gather*}
 
 \noindent Teraz môžeme spätne dopočítať hodnoty $\boldsymbol{U_{R7}}$ a $\boldsymbol{I_{R7}}$:
 \\\\
-Vypočítame si napätie na $R_{B457C6}$ pomocou prúdu $\boldsymbol{I}$, ktorý je v sériovom zapojení konštantný na každom rezistore.
+Vypočítame si napätie na $R_{B457C6}$ pomocou prúdu $\boldsymbol{I}$, ktorý je v sériovom zapojení rovnaký na každom rezistore v danom obvode.
 
 \begin{gather*}
-    % U_RB457C6
     U_{R_{B457C6}} = I \times R_{B457C6} = 0.23895 \times 378,8844 = 90,5344 V \\\\
 \end{gather*}
 
-\noindent Ďalej vieme, že napätie, prechádzajúce cez paralelné rezistory je taktiež rovnaké a pomocou toho dopočítame prúd na $\boldsymbol{R_{B457}}$
+\noindent Ďalej vieme, že napätie, prechádzajúce cez paralelné rezistory je na týchto rezistoroch taktiež rovnaké a pomocou toho dopočítame prúd na $\boldsymbol{R_{B457}}$
 
 \begin{gather*}
-    % U_RB457
     \boldsymbol{U_{R_{B457}}} = U_{R_{B457C6}} = 90,5334 V \\\\
 \end{gather*}
 
 \noindent Pomocou Omhovho zákona vieme dopočítať prúd na $\boldsymbol{R_{B457}}$
 
 \begin{gather*}
-    % I
    \boldsymbol{I_{R_{B457}}} = \frac {U_{R_{B457}}} {R_{B457}} = \frac{90,5334} {743,4454} = 0,12177 A \\
 \end{gather*}
 
 \noindent Pomocou $\boldsymbol{I_{R_{B457}}}$ a Ohmovho zákona už vieme dopočítať $\boldsymbol{U_{R_{7}}}$ a $\boldsymbol{I_{R_{7}}}$
 
 \begin{gather*}
-    % IR7
    \boldsymbol{I_{R_{7}}} = I_{R_{B457}} = \boldsymbol{0,12177 A} \\
    \boldsymbol{U_{R_{7}}} = I_{R_{7}} \times {R_{7}} = 0,12177 \times 410 = \boldsymbol{49,9279 V} \\\\
 \end{gather*}
