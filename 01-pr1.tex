@@ -2,22 +2,19 @@
 % Jako parametr zadejte skupinu (A-H)
 \prvniZadani{G}
 
-\large{\textbf{Výpočet R$_E$$_K$$_V$ (Metóda postupného zjednodušovania):}}
-
 \begin{center}
-
-\textbf{Krok 1} - Zjednodušenie $R_4$ a $R_5$ podľa vzorca pre paralelne zapojené rezistory.
-\includegraphics[scale=0.6,keepaspectratio]{fig/c1.png} \\
+	\textbf{Krok 1} - Zjednodušenie paralelných rezistorov $R_4$ a $R_5$
+	\includegraphics[scale=0.6,keepaspectratio]{fig/c1.png} \\
 \end{center}
 
 \begin{gather*}
-R_{45} = \frac{R_4 \times R_5}{R_4 + R_5} = \frac{440 \times 450}{440 + 450} = 222,4719 \Omega
+	R_{45} = \frac{R_4 \times R_5}{R_4 + R_5} = \frac{440 \times 450}{440 + 450} = 222,4719 \Omega
 \end{gather*}
 
 \newpage
 
 \begin{center}
-\textbf{Krok 2} - Transfigurácia - Trojuholník $\Rightarrow$ Hviezda
+\textbf{Krok 2} - Využitie metódy \textbf{Trojuhloník - Hviezda}
 \includegraphics[scale=0.6,keepaspectratio]{fig/c2.png} \\
 \end{center}
 
@@ -34,7 +31,7 @@ R_C = \frac{R_2 \times R_3}{R_1 + R_2 + R_3} =
 \end{gather*}
 
 \begin{center}
-\textbf{Krok 3} - Zjednodušenie sériových rezistorov $R_B$, $R_{45}$ a $R_7$
+\textbf{Krok 3} -Sčítanie rezistorov $R_B$, $R_{45}$ a $R_7$ zapojených v sérii
 \includegraphics[scale=0.5,keepaspectratio]{fig/c3.png} \\
 ($R_B, R_45, R_7, \Rightarrow R_{B457}$ | $R_C, R_6 \Rightarrow R_{C6}$)
 \end{center}
@@ -53,7 +50,7 @@ R_{C6} = R_C + R_6 =
 \newpage
 
 \begin{center}
-\textbf{Krok 4} - Zjednodušenie paralelných rezistorov $R_{B457}$ a $R_{C6}$ \\
+\textbf{Krok 4} - Zjednodušenie paralelne zapojených rezistorov $R_{B457}$ a $R_{C6}$ \\
 \includegraphics[scale=0.5,keepaspectratio]{fig/c4.png} \\
 ($R_{B45}, R_{C6} \Rightarrow R_{B45C6}$)
 \end{center}
@@ -65,7 +62,7 @@ R_{C6} = R_C + R_6 =
 \end{gather*}
 
 \begin{center}
-\textbf{Krok 5} - Zjednodušenie sériových zdrojov $U_1$ a $U_2$
+\textbf{Krok 5} - Sčítanie sériových zdrojov $U_1$ a $U_2$
 \includegraphics[scale=0.7,keepaspectratio]{fig/c5.png} \\
 ($U_{1},U_{2} \Rightarrow U_{12}$)
 \end{center}
@@ -75,7 +72,7 @@ R_{C6} = R_C + R_6 =
 \end{gather*}
 
 \begin{center}
-\textbf{Krok 6} - Výpočet R$_E$$_K$$_V$ - zjednodušenie sériových rezistorov $R_{B457C6}$, $R_A$ a $R_8$
+\textbf{Krok 6} - Výpočet R$_E$$_K$$_V$ - sčítanie sériových rezistorov $R_{B457C6}$, $R_A$ a $R_8$
 \\
 \includegraphics[scale=0.8,keepaspectratio]{fig/c6.png} \\
 ($R_{A}, R_{B457C6}, R_{8} \Rightarrow R_{AB457C68} \Rightarrow R_{EKV}$)
@@ -88,25 +85,27 @@ R_{C6} = R_C + R_6 =
 \newpage
 
 \begin{center}
-\textbf{Krok 7} - Výpočet prúdu
+\textbf{Krok 7} - Výpočet prúdu pomocou Ohmovho zákona a $R_{EKV}$
 \end{center}
 
 \begin{gather*}
    I = \frac {U_{12}} {R_{EKV}} = \frac {190} {795,1233} = 0.23895 A \\
 \end{gather*}
 
-\noindent Teraz môžeme spätne dopočítať hodnoty $\boldsymbol{U_{R7}}$ a $\boldsymbol{I_{R7}}$:
-\\\\
+\begin{center}
+\textbf{Krok 8} - Výpočet $U_{R_{7}}$ a $I_{R_{7}}$
+\end{center}
+
 Vypočítame si napätie na $R_{B457C6}$ pomocou prúdu $\boldsymbol{I}$, ktorý je v sériovom zapojení rovnaký na každom rezistore v danom obvode.
 
 \begin{gather*}
-    U_{R_{B457C6}} = I \times R_{B457C6} = 0.23895 \times 378,8844 = 90,5344 V \\\\
+    U_{R_{B457C6}} = I \times R_{B457C6} = 0.23895 \times 378,8844 = 90,5344 V \\
 \end{gather*}
 
-\noindent Ďalej vieme, že napätie, prechádzajúce cez paralelné rezistory je na týchto rezistoroch taktiež rovnaké a pomocou toho dopočítame prúd na $\boldsymbol{R_{B457}}$
+\noindent Ďalej vieme, že napätie prechádzajúce cez paralelné rezistory je na týchto rezistoroch taktiež rovnaké a pomocou toho dopočítame prúd na $\boldsymbol{R_{B457}}$
 
 \begin{gather*}
-    \boldsymbol{U_{R_{B457}}} = U_{R_{B457C6}} = 90,5334 V \\\\
+    \boldsymbol{U_{R_{B457}}} = U_{R_{B457C6}} = 90,5334 V \\
 \end{gather*}
 
 \noindent Pomocou Omhovho zákona vieme dopočítať prúd na $\boldsymbol{R_{B457}}$
@@ -119,7 +118,7 @@ Vypočítame si napätie na $R_{B457C6}$ pomocou prúdu $\boldsymbol{I}$, ktorý
 
 \begin{gather*}
    \boldsymbol{I_{R_{7}}} = I_{R_{B457}} = \boldsymbol{0,12177 A} \\
-   \boldsymbol{U_{R_{7}}} = I_{R_{7}} \times {R_{7}} = 0,12177 \times 410 = \boldsymbol{49,9279 V} \\\\
+   \boldsymbol{U_{R_{7}}} = I_{R_{7}} \times {R_{7}} = 0,12177 \times 410 = \boldsymbol{49,9279 V} \\
 \end{gather*}
 
  
