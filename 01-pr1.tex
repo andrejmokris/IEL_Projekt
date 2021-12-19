@@ -20,7 +20,7 @@
 \includegraphics[scale=0.6,keepaspectratio]{fig/c2.png} \\
 \end{center}
 
-\noindent Z rezistorov $R_1$, $R_2$ a $R_3$ prevedieme z trojuholníka do hviezdy vypočítame ich hodnoty v tejto pozícii.\\
+\noindent Z rezistorov $R_1$, $R_2$ a $R_3$ prevedieme z trojuholníka do hviezdy vypočítame hodnoty $R_A$, $R_B$ a $R_C$.\\
 
 \begin{gather*}
 R_A = \frac{R_1 \times R_2}{R_1 + R_2 + R_3} =
@@ -37,7 +37,6 @@ R_C = \frac{R_2 \times R_3}{R_1 + R_2 + R_3} =
 \begin{center}
 \textbf{Krok 3} -Sčítanie rezistorov $R_B$, $R_{45}$ a $R_7$ zapojených v sérii
 \includegraphics[scale=0.5,keepaspectratio]{fig/c3.png} \\
-($R_B, R_45, R_7, \Rightarrow R_{B457}$ | $R_C, R_6 \Rightarrow R_{C6}$)
 \end{center}
 
 \begin{gather*}
@@ -56,7 +55,6 @@ R_{C6} = R_C + R_6 =
 \begin{center}
 \textbf{Krok 4} - Zjednodušenie paralelne zapojených rezistorov $R_{B457}$ a $R_{C6}$ \\
 \includegraphics[scale=0.5,keepaspectratio]{fig/c4.png} \\
-($R_{B45}, R_{C6} \Rightarrow R_{B45C6}$)
 \end{center}
 
 \begin{gather*}
@@ -68,7 +66,6 @@ R_{C6} = R_C + R_6 =
 \begin{center}
 \textbf{Krok 5} - Sčítanie sériových zdrojov $U_1$ a $U_2$
 \includegraphics[scale=0.7,keepaspectratio]{fig/c5.png} \\
-($U_{1},U_{2} \Rightarrow U_{12}$)
 \end{center}
 
 \begin{gather*}
@@ -79,8 +76,9 @@ R_{C6} = R_C + R_6 =
 \textbf{Krok 6} - Výpočet R$_E$$_K$$_V$ - sčítanie sériových rezistorov $R_{B457C6}$, $R_A$ a $R_8$
 \\
 \includegraphics[scale=0.8,keepaspectratio]{fig/c6.png} \\
-($R_{A}, R_{B457C6}, R_{8} \Rightarrow R_{AB457C68} \Rightarrow R_{EKV}$)
 \end{center}
+
+\noindent Ostávajúce sériové rezistory zjednodušíme do jedného rezistora označeného ako $R_{EKV}$ 
 
 \begin{gather*}
     R_{EKV} = R_{A} + R_{B457C6} + R_{8} = 141,2389 + 378.8844 + 275 = 795,1233 \Omega

@@ -22,7 +22,7 @@
 \end{gather*}
 
 \begin{center}
-    \textbf{Krok 2} - Vypočítame $U_i$ pomocou smyčkového prúdu $I_A$
+    \textbf{Krok 3} - Vypočítame $U_i$ pomocou smyčkového prúdu $I_A$
 \end{center}
 
 \begin{gather*}
@@ -37,8 +37,8 @@
     \end{pmatrix}
     =
     \begin{pmatrix}
-    0 \\
-    U
+    U \\
+    0
     \end{pmatrix}
 \end{gather*}
 \\
@@ -59,11 +59,12 @@ Použijeme Cramerovo pravidlo a determinanty matíc pre výpočet $I_A$:
 \begin{gather*}
     I_A = \frac{211500}{777000} = 0.2722 A
     \\\\
-    U_i = U_{R_2} = I_A \times R_2 = 0.2722 \times 200 = 54,44 V
+    U_i = U_{R_2} \\
+   U_i = I_A \times R_2 = 0.2722 \times 200 = 54,44 V
 \end{gather*}
 
 \begin{center}
-    \textbf{Krok 3} - Pomocou ekvivalentného obvodu, ktorý obsahuje vnútorné napätie a vnútorný odpor, ktoré sme vypočítali, dopočítame $U_{R_1}$ a $I_{R_1}$ \\
+    \textbf{Krok 4} - Cez ekvivalentný obvod, ktorý obsahuje vnútorné napätie, vnútorný odpor a rezistor $R_1$, ktorého hodnoty chceme vypočítať, dopočítame $U_{R_1}$ a $I_{R_1}$ \\
     \includegraphics[scale=0.5,keepaspectratio]{fig/pr2_3.png} \
 \end{center}
 
